@@ -2,7 +2,7 @@
 
 This ice3x library is a Python package compliant with the ICE3X APi version 2.
 
-This package is essentially a port of the official (PHP client)[https://github.com/ICE3X/v2-PHP].
+This package is essentially a port of the official [PHP client](https://github.com/ICE3X/v2-PHP).
 
 # Installation
 
