@@ -40,5 +40,5 @@ if __name__ == '__main__':
       description='Ice3x Crypto Currency Exchanage Python API',
       long_description=readme,
       install_requires=requirements,
-      extras_require={'dev': ['pytest']}
+      extras_require={'dev': ['pytest', 'requests-mock']}
     )

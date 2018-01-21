@@ -7,42 +7,60 @@ import hashlib
 
 from typing import List, Dict
 from ice3x.clients.abc import IceCubedClientABC
+from ice3x.decorators import add_nonce, requires_authentication
 
 
 class IceCubedSyncClient(IceCubedClientABC):
     @property
     def _has_auth_details(self) -> bool:
+        """Internal helper function which checks that an API key and secret have been provided"""
         return all([self.secret is not None, self.api_key is not None])
-    
-    def sign(self, params: Dict) -> str:
-        """"""
-        query = urllib.parse.urlencode(params)
-        signature = hmac.new(self.secret.encode(), query.encode(), hashlib.sha512)
-        
-        return signature.hexdigest()
 
-    def get_post_headers(self, signature: str) -> Dict:
+    def _get_post_headers(self, signature: str) -> Dict:
         """"""
         return {
             'Key': self.api_key,
             'Sign': signature
         }
+
+    def sign(self, params: Dict) -> str:
+        """Sign a dict of query params for private API calls
+
+        Args:
+            params: A dict of query params
+
+        Returns:
+            A sha512 signed payload
+        """
+        query = urllib.parse.urlencode(params)
+        signature = hmac.new(self.secret.encode(), query.encode(), hashlib.sha512)
+        
+        return signature.hexdigest()
     
     def __init__(self, api_key: str=None, secret: str=None) -> None:
+        """Instantiate the client
+
+        Args:
+            api_key: An ICE3X public API key
+            secret: An ICE3X private API key
+        """
         self.session = requests.Session()
-        
-        headers = {
-            'user-agent': 'Mozilla/4.0 (compatible; Ice3x Python client)',
-            'content-type': 'application/json'
-        }
-        
+                
         self.api_key = api_key
         self.secret = secret
 
-        self.session.headers.update(headers)
+        # Set the default session request headers
+        self.session.headers['user-agent'] = 'Mozilla/4.0 (compatible; Ice3x Python client)'
 
     def get_public_trade_info(self, trade_id: int, **params: Dict) -> Dict:
-        """"""
+        """Fetch public info relating to a specified trade
+
+        Args:
+            trade_id: A valid trade id
+
+        Returns:
+            Data relating to the specified trade id
+        """
         url = f'{self.BASE_URL}/trade/info'
         
         params.update({'trade_id': trade_id})
@@ -52,7 +70,11 @@ class IceCubedSyncClient(IceCubedClientABC):
         return resp.json()
             
     def get_public_trade_list(self, **params: Dict) -> Dict:
-        """"""
+        """Fetch a public facing list of trades
+
+        Returns:
+            A list of public trade data
+        """
         url = f'{self.BASE_URL}/trade/list'
 
         resp = self.session.get(url, params=params)
@@ -142,7 +164,7 @@ class IceCubedSyncClient(IceCubedClientABC):
         url = f'{self.BASE_URL}/invoice/list'
             
         signature = self.sign(params)
-        headers = self.get_post_headers(signature)
+        headers = self._get_post_headers(signature)
         
         resp = self.session.post(url, params=params, headers=headers)
         resp.raise_for_status()
@@ -157,7 +179,7 @@ class IceCubedSyncClient(IceCubedClientABC):
         
         params.update({'invoice_id': invoice_id})
         signature = self.sign(params)
-        headers = self.get_post_headers(signature)
+        headers = self._get_post_headers(signature)
         
         resp = self.session.post(url, params=params, headers=headers)
         resp.raise_for_status()
@@ -172,7 +194,7 @@ class IceCubedSyncClient(IceCubedClientABC):
         
         params.update({'invoice_id': invoice_id})
         signature = self.sign(params)
-        headers = self.get_post_headers(signature)
+        headers = self._get_post_headers(signature)
         
         resp = self.session.post(url, params=params, headers=headers)
         resp.raise_for_status()
@@ -187,7 +209,7 @@ class IceCubedSyncClient(IceCubedClientABC):
         
         params.update({'order_id': order_id})
         signature = self.sign(params)
-        headers = self.get_post_headers(signature)
+        headers = self._get_post_headers(signature)
         
         resp = self.session.post(url, params=params, headers=headers)
         resp.raise_for_status()
@@ -202,7 +224,7 @@ class IceCubedSyncClient(IceCubedClientABC):
         
         params.update({'order_id': order_id})
         signature = self.sign(params)
-        headers = self.get_post_headers(signature)
+        headers = self._get_post_headers(signature)
         
         resp = self.session.post(url, params=params, headers=headers)
         resp.raise_for_status()
@@ -217,7 +239,7 @@ class IceCubedSyncClient(IceCubedClientABC):
         
         params.update({'order_id': order_id})
         signature = self.sign(params)
-        headers = self.get_post_headers(signature)
+        headers = self._get_post_headers(signature)
         
         resp = self.session.post(url, params=params, headers=headers)
         resp.raise_for_status()
@@ -231,7 +253,7 @@ class IceCubedSyncClient(IceCubedClientABC):
         url = f'{self.BASE_URL}/order/list'
         
         signature = self.sign(params)
-        headers = self.get_post_headers(signature)
+        headers = self._get_post_headers(signature)
         
         resp = self.session.post(url, params=params, headers=headers)
         resp.raise_for_status()
@@ -246,7 +268,7 @@ class IceCubedSyncClient(IceCubedClientABC):
         
         params.update({'transaction_id': transaction_id})
         signature = self.sign(params)
-        headers = self.get_post_headers(signature)
+        headers = self._get_post_headers(signature)
         
         resp = self.session.post(url, params=params, headers=headers)
         resp.raise_for_status()
@@ -260,7 +282,7 @@ class IceCubedSyncClient(IceCubedClientABC):
         url = f'{self.BASE_URL}/transaction/list'
         
         signature = self.sign(params)
-        headers = self.get_post_headers(signature)
+        headers = self._get_post_headers(signature)
         
         resp = self.session.post(url, params=params, headers=headers)
         resp.raise_for_status()
@@ -275,7 +297,7 @@ class IceCubedSyncClient(IceCubedClientABC):
         
         params.update({'trade_id': trade_id})
         signature = self.sign(params)
-        headers = self.get_post_headers(signature)
+        headers = self._get_post_headers(signature)
         
         resp = self.session.post(url, params=params, headers=headers)
         resp.raise_for_status()
@@ -289,7 +311,7 @@ class IceCubedSyncClient(IceCubedClientABC):
         url = f'{self.BASE_URL}/trade/list'
 
         signature = self.sign(params)
-        headers = self.get_post_headers(signature)
+        headers = self._get_post_headers(signature)
         
         resp = self.session.post(url, params=params, headers=headers)
         resp.raise_for_status()
@@ -303,7 +325,7 @@ class IceCubedSyncClient(IceCubedClientABC):
         url = f'{self.BASE_URL}/balance/list'
 
         signature = self.sign(params)
-        headers = self.get_post_headers(signature)
+        headers = self._get_post_headers(signature)
         
         resp = self.session.post(url, params=params, headers=headers)
         resp.raise_for_status()
@@ -318,7 +340,7 @@ class IceCubedSyncClient(IceCubedClientABC):
 
         params.update({'currency_id': currency_id})
         signature = self.sign(params)
-        headers = self.get_post_headers(signature)
+        headers = self._get_post_headers(signature)
         
         resp = self.session.post(url, params=params, headers=headers)
         resp.raise_for_status()

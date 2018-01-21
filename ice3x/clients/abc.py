@@ -15,5 +15,5 @@ class IceCubedClientABC(abc.ABC):
         pass
 
     @abc.abstractmethod
-    def get_post_headers(self, signature: str) -> Dict:
+    def _get_post_headers(self, signature: str) -> Dict:
     	pass
