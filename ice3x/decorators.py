@@ -1,6 +1,7 @@
 import datetime
 
 from functools import wraps
+from ice3x.exceptions import UnauthorisedResourceException
 
 
 def requires_authentication(func):
@@ -8,7 +9,7 @@ def requires_authentication(func):
     @wraps(func)
     def inner(self, *args, **kwargs):
         if not self._has_auth_details:
-            raise Exception(f'private method authentication required')
+            raise UnauthorisedResourceException(f'authentication is required for private resources')
         
         return func(self, *args, **kwargs)
     return inner

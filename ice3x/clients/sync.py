@@ -10,6 +10,7 @@ from ice3x.clients.abc import IceCubedClientABC
 from ice3x.decorators import add_nonce, requires_authentication
 
 
+
 class IceCubedSyncClient(IceCubedClientABC):
     @property
     def _has_auth_details(self) -> bool:
@@ -218,11 +219,18 @@ class IceCubedSyncClient(IceCubedClientABC):
     
     @add_nonce
     @requires_authentication
-    def create_order(self, order_id: int, **params: Dict) -> Dict:
+    def create_order(self, pair_id: int, amount: float, otype: str, **params: Dict) -> Dict:
         """"""
         url = f'{self.BASE_URL}/order/new'
         
-        params.update({'order_id': order_id})
+        params.update(
+            {
+                'pair_id': pair_id,
+                'amount': amount,
+                'type': otype
+            }
+        )
+
         signature = self.sign(params)
         headers = self._get_post_headers(signature)
         
