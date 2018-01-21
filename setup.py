@@ -38,6 +38,17 @@ if __name__ == '__main__':
       author_email='bradleykirton@gmail.com',
       packages=find_packages(),
       description='Ice3x Crypto Currency Exchanage Python API',
+      url='https://github.com/BradleyKirton/ice3x',
+      license='MIT',
+      keywords=['exchange', 'crypto currency', 'rest', 'api', 'bitcoin', 'etherium'],
+      classifiers=[
+         'Development Status :: 4 - Alpha',
+         'Intended Audience :: Developers',
+         'Operating System :: OS Independent',
+         'Topic :: Software Development :: Libraries :: Python Modules',
+         'License :: OSI Approved :: MIT License',
+         'Programming Language :: Python :: 3.6',
+      ],
       long_description=readme,
       install_requires=requirements,
       extras_require={'dev': ['pytest', 'requests-mock']}
