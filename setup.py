@@ -8,7 +8,7 @@ from setuptools import find_packages
 def get_version():
   PATTERN = '__version__\s+=\s+(?P<version>.*)'
 
-  with open(os.path.join(os.path.dirname(__file__), 'overlay/__init__.py'), 'r') as f:
+  with open(os.path.join(os.path.dirname(__file__), 'ice3x/__init__.py'), 'r') as f:
       match = re.search(PATTERN, f.read())
       match_dict = match.groupdict()
 
