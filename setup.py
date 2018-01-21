@@ -6,7 +6,7 @@ from setuptools import find_packages
 
 # Some helper functions
 def get_version():
-  PATTERN = '__version__\s+=\s+(?P<version>.*)'
+  PATTERN = "__version__\s+=\s+'(?P<version>.*)'"
 
   with open(os.path.join(os.path.dirname(__file__), 'ice3x/__init__.py'), 'r') as f:
       match = re.search(PATTERN, f.read())
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     version = get_version()
 
     setup(
-      name='Ice3x',
+      name='ice3x',
       version=version,
       author='Bradley Stuart Kirton',
       author_email='bradleykirton@gmail.com',
@@ -42,12 +42,14 @@ if __name__ == '__main__':
       license='MIT',
       keywords=['exchange', 'crypto currency', 'rest', 'api', 'bitcoin', 'etherium'],
       classifiers=[
-         'Development Status :: 4 - Alpha',
+         'Development Status :: 4 - Beta',
          'Intended Audience :: Developers',
+         'Intended Audience :: Financial and Insurance Industry',
          'Operating System :: OS Independent',
+         'Topic :: Office/Business :: Financial :: Investment',
          'Topic :: Software Development :: Libraries :: Python Modules',
          'License :: OSI Approved :: MIT License',
-         'Programming Language :: Python :: 3.6',
+         'Programming Language :: Python :: 3 :: Only'
       ],
       long_description=readme,
       install_requires=requirements,
