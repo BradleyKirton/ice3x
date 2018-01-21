@@ -15,20 +15,12 @@ def get_version():
   return match_dict['version']
 
 
-def get_readme():
-  with open('README.md', 'r') as f:
-      readme = f.read()
-
-  return readme
-
-
 requirements = [
     'requests'
 ]
 
 
 if __name__ == '__main__':
-    readme = get_readme()
     version = get_version()
 
     setup(
@@ -51,7 +43,6 @@ if __name__ == '__main__':
          'License :: OSI Approved :: MIT License',
          'Programming Language :: Python :: 3 :: Only'
       ],
-      long_description=readme,
       install_requires=requirements,
       extras_require={'dev': ['pytest', 'requests-mock']}
     )
