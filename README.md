@@ -4,8 +4,6 @@ This ice3x library is a Python package compliant with the ICE3X APi version 2.
 
 This package is essentially a port of the official [PHP client](https://github.com/ICE3X/v2-PHP).
 
-Note this library is still in beta.
-
 # Installation
 
 Clone the repo and install.
@@ -30,3 +28,12 @@ source env/bin/activate
 pip install -e .[dev]
 pytest
 ```
+
+# TODO
+
+Note this library is still in beta.
+
+- Write full test suite for sync client
+- Write documentation
+- Upload to pypi
+- Write async client
