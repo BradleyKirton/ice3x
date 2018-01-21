@@ -51,7 +51,6 @@ pytest
 
 Note this library is still in beta.
 
-- Write full test suite for sync client
 - Write documentation
 - Upload to pypi
 - Write async client
