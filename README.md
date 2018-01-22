@@ -44,15 +44,28 @@ d.addCallback(print_data)
 
 # Installation
 
-Clone the repo and install.
+The library can be installed from PyPi as follows.
+
+```bash
+pip install ice3x
+```
+
+The async client is an optional extra and may be installed as follows.
+
+```bash
+pip install ice3x[async]
+```
+
+To install the version on this repository follow the steps below.
 
 ```bash
 git clone https://github.com/BradleyKirton/ice3x
 cd ice3x
 python -m venv env # virtualenv env
 source env/bin/activate
-pip install .
+pip install . #pip install .[async] for the async client
 ```
+
 
 # Developement
 
