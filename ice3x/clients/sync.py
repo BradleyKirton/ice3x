@@ -1,43 +1,11 @@
-import json
-import hmac
-import urllib
 import requests
-import datetime
-import hashlib
 
-from typing import List, Dict
-from ice3x.clients.abc import IceCubedClientABC
+from typing import Dict
+from ice3x.clients.abc import IceCubedClientBase
 from ice3x.decorators import add_nonce, requires_authentication
 
 
-
-class IceCubedSyncClient(IceCubedClientABC):
-    @property
-    def _has_auth_details(self) -> bool:
-        """Internal helper function which checks that an API key and secret have been provided"""
-        return all([self.secret is not None, self.api_key is not None])
-
-    def _get_post_headers(self, signature: str) -> Dict:
-        """"""
-        return {
-            'Key': self.api_key,
-            'Sign': signature
-        }
-
-    def sign(self, params: Dict) -> str:
-        """Sign a dict of query params for private API calls
-
-        Args:
-            params: A dict of query params
-
-        Returns:
-            A sha512 signed payload
-        """
-        query = urllib.parse.urlencode(params)
-        signature = hmac.new(self.secret.encode(), query.encode(), hashlib.sha512)
-        
-        return signature.hexdigest()
-    
+class IceCubedSyncClient(IceCubedClientBase):    
     def __init__(self, api_key: str=None, secret: str=None) -> None:
         """Instantiate the client
 
@@ -51,7 +19,7 @@ class IceCubedSyncClient(IceCubedClientABC):
         self.secret = secret
 
         # Set the default session request headers
-        self.session.headers['user-agent'] = 'Mozilla/4.0 (compatible; Ice3x Python client)'
+        self.session.headers['user-agent'] = 'Mozilla/4.0 (compatible; Ice3x Sync Python client)'
 
     def get_public_trade_info(self, trade_id: int, **params: Dict) -> Dict:
         """Fetch public info relating to a specified trade
