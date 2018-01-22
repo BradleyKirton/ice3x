@@ -10,7 +10,7 @@ The ICE3X API has two broad categories of resources, protected and unprotected r
 
 In order to access protected resources one needs to create a private and public key under the [account management](https://ice3x.com/account/api) section of their platform.
 
-Below is an example of accessing the ICE3X API with the sync client.
+## Sync client
 
 ```python
 from ice3x.clients.sync import IceCubedSyncClient
@@ -20,6 +20,26 @@ secret = 'private key'
 
 client = IceCubedSyncClient(api_key=api_key, secret=secret)
 client.get_public_trade_list()
+```
+
+
+## Async client
+
+```python
+from ice3x.clients.async import IceCubedAsyncClient
+
+
+api_key = 'public key'
+secret = 'private key'
+
+client = IceCubedAsyncClient(api_key=api_key, secret=secret)
+
+def print_data(data: Dict) -> None:
+    """prints the json response from an API call"""
+    print(data)
+
+d = client.get_public_trade_list()
+d.addCallback(print_data)
 ```
 
 # Installation
@@ -52,5 +72,4 @@ pytest
 Note this library is still in beta.
 
 - Write documentation
-- Upload to pypi
-- Write async client
+- Write test suite for async client
