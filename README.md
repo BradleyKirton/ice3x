@@ -26,6 +26,8 @@ client.get_public_trade_list()
 ## Async client
 
 ```python
+from typing import Dict
+from twisted.internet import reactor
 from ice3x.clients.async import IceCubedAsyncClient
 
 
@@ -40,6 +42,8 @@ def print_data(data: Dict) -> None:
 
 d = client.get_public_trade_list()
 d.addCallback(print_data)
+
+reactor.run()
 ```
 
 # Installation
