@@ -44,5 +44,5 @@ if __name__ == '__main__':
          'Programming Language :: Python :: 3 :: Only'
       ],
       install_requires=requirements,
-      extras_require={'dev': ['pytest', 'requests-mock'], 'async': ['treq']}
+      extras_require={'dev': ['pytest', 'pytest-mock', 'pytest-twisted'], 'async': ['treq']}
     )
