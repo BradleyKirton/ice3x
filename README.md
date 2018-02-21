@@ -41,7 +41,7 @@ def print_data(data: Dict) -> None:
     print(data)
 
 d = client.get_public_trade_list()
-d.addCallback(print_data)
+d.addBoth(print_data)
 
 reactor.run()
 ```
@@ -89,4 +89,3 @@ pytest
 Note this library is still in beta.
 
 - Write documentation
-- Write test suite for async client
