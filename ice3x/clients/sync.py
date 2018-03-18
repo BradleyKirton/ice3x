@@ -136,13 +136,21 @@ class IceCubedSyncClient(IceCubedClientBase):
     
     @add_nonce
     @requires_authentication
-    def create_order(self, pair_id: int, amount: float, otype: str, **params: Dict) -> Dict:
-        """"""
+    def create_order(self, pair_id: int, kind: str, price: float, amount: float, **params: Dict) -> Dict:
+        """Creates a new order given the provided inputs
+
+        Args:
+            paid_id: Currency pair id
+            kind: Transaction type i.e. 'buy' or 'sell'
+            price: The price to be transacted at
+            volume: The volume to be transacted
+        """
         params.update(
             {
                 'pair_id': pair_id,
                 'amount': amount,
-                'type': otype
+                'price': price,
+                'type': kind
             }
         )
         
