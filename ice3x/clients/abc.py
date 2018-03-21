@@ -7,8 +7,6 @@ from typing import Dict
 
 
 class IceCubedClientABC(abc.ABC):
-    BASE_URI = 'https://ice3x.com/api/v1/'
-    
     @abc.abstractproperty
     def _has_auth_details(self) -> bool:
         pass
@@ -19,6 +17,8 @@ class IceCubedClientABC(abc.ABC):
 
 
 class IceCubedClientBase(IceCubedClientABC):
+    BASE_URI = 'https://ice3x.com/api/v1/'
+
     @property
     def _has_auth_details(self) -> bool:
         """Internal helper function which checks that an API key and secret have been provided"""
