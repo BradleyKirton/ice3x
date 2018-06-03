@@ -25,7 +25,7 @@ def uclient():
 
 @pytest.fixture
 def response():
-    """Provides an unauthorized client as a fixture"""
+    """Provides a response object as a fixture"""
     return Response()
 
 

@@ -20,7 +20,7 @@ def add_nonce(func):
     @wraps(func)
     def inner(*args, **kwargs):
         if 'nonce' not in kwargs:
-            kwargs['nonce'] = int(datetime.datetime.utcnow().timestamp())
+            kwargs['nonce'] = int(datetime.datetime.utcnow().timestamp() * 1000)
             
         return func(*args, **kwargs)
     return inner

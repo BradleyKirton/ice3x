@@ -46,6 +46,7 @@ def test_get_public_trade_info(mocker, response, client) -> None:
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
 
+
 @pytest.inlineCallbacks
 def test_get_public_trade_list(mocker, response, client) -> None:
     """Test the test_get_public_trade_list of the sync client"""
@@ -59,6 +60,7 @@ def test_get_public_trade_list(mocker, response, client) -> None:
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
 
+
 @pytest.inlineCallbacks
 def test_get_market_depth(mocker, response, client) -> None:
     """Test the get_market_depth of the sync client"""
@@ -71,6 +73,7 @@ def test_get_market_depth(mocker, response, client) -> None:
     
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
+
 
 @pytest.inlineCallbacks
 def test_get_pair_info(mocker, response, client) -> None:
@@ -99,6 +102,7 @@ def test_get_pair_list(mocker, response, client) -> None:
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
 
+
 @pytest.inlineCallbacks
 def test_get_currency_info(mocker, response, client) -> None:
     """Test the get_currency_info of the sync client"""
@@ -111,6 +115,7 @@ def test_get_currency_info(mocker, response, client) -> None:
     
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
+
 
 @pytest.inlineCallbacks
 def test_get_currency_list(mocker, response, client) -> None:
@@ -125,6 +130,7 @@ def test_get_currency_list(mocker, response, client) -> None:
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
 
+
 @pytest.inlineCallbacks
 def test_get_orderbook_info(mocker, response, client) -> None:
     """Test the get_orderbook_info of the sync client"""
@@ -137,6 +143,7 @@ def test_get_orderbook_info(mocker, response, client) -> None:
     
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
+
 
 @pytest.inlineCallbacks
 def test_get_market_depth_full(mocker, response, client) -> None:
@@ -151,6 +158,7 @@ def test_get_market_depth_full(mocker, response, client) -> None:
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
 
+
 @pytest.inlineCallbacks
 def test_get_market_depth_bt_cav(mocker, response, client) -> None:
     """Test the get_market_depth_bt_cav of the sync client"""
@@ -163,6 +171,7 @@ def test_get_market_depth_bt_cav(mocker, response, client) -> None:
     
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
+
 
 @pytest.inlineCallbacks
 def test_get_invoice_list(mocker, response, client) -> None:
@@ -177,6 +186,7 @@ def test_get_invoice_list(mocker, response, client) -> None:
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
 
+
 @pytest.inlineCallbacks
 def test_get_invoice_info(mocker, response, client) -> None:
     """Test the get_invoice_info of the sync client"""
@@ -189,6 +199,7 @@ def test_get_invoice_info(mocker, response, client) -> None:
     
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
+
 
 @pytest.inlineCallbacks
 def test_get_invoice_pdf(mocker, response, client) -> None:
@@ -203,6 +214,7 @@ def test_get_invoice_pdf(mocker, response, client) -> None:
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
 
+
 @pytest.inlineCallbacks
 def test_cancel_order(mocker, response, client) -> None:
     """Test the cancel_order of the sync client"""
@@ -215,6 +227,7 @@ def test_cancel_order(mocker, response, client) -> None:
     
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
+
 
 @pytest.inlineCallbacks
 def test_create_order(mocker, response, client) -> None:
@@ -229,6 +242,7 @@ def test_create_order(mocker, response, client) -> None:
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
 
+
 @pytest.inlineCallbacks
 def test_get_order_info(mocker, response, client) -> None:
     """Test the get_order_info of the sync client"""
@@ -241,6 +255,7 @@ def test_get_order_info(mocker, response, client) -> None:
     
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
+
 
 @pytest.inlineCallbacks
 def test_get_order_list(mocker, response, client) -> None:
@@ -255,6 +270,7 @@ def test_get_order_list(mocker, response, client) -> None:
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
 
+
 @pytest.inlineCallbacks
 def test_get_transaction_info(mocker, response, client) -> None:
     """Test the get_transaction_info of the sync client"""
@@ -267,6 +283,7 @@ def test_get_transaction_info(mocker, response, client) -> None:
     
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
+
 
 @pytest.inlineCallbacks
 def test_get_transaction_list(mocker, response, client) -> None:
@@ -281,6 +298,7 @@ def test_get_transaction_list(mocker, response, client) -> None:
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
 
+
 @pytest.inlineCallbacks
 def test_get_trade_info(mocker, response, client) -> None:
     """Test the get_trade_info of the sync client"""
@@ -293,6 +311,7 @@ def test_get_trade_info(mocker, response, client) -> None:
     
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
+
 
 @pytest.inlineCallbacks
 def test_get_trade_list(mocker, response, client) -> None:
@@ -307,6 +326,7 @@ def test_get_trade_list(mocker, response, client) -> None:
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
 
+
 @pytest.inlineCallbacks
 def test_get_balance_list(mocker, response, client) -> None:
     """Test the get_balance_list of the sync client"""
@@ -320,6 +340,7 @@ def test_get_balance_list(mocker, response, client) -> None:
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
 
+
 @pytest.inlineCallbacks
 def test_get_balance_info(mocker, response, client) -> None:
     """Test the get_balance_info of the sync client"""
@@ -332,6 +353,7 @@ def test_get_balance_info(mocker, response, client) -> None:
     
     message = (f"expected reponse {data}, received {response}")
     assert data == response, message
+
 
 @pytest.inlineCallbacks
 def test_unauthorised_access(mocker, response, uclient):
