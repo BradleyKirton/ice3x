@@ -120,13 +120,9 @@ class IceCubedAsyncClient(IceCubedClientBase):
 
     @add_nonce
     @requires_authentication
-<<<<<<< HEAD:ice3x/clients/asynchronous.py
     def create_order(
         self, pair_id: int, kind: str, price: float, amount: float, **params: Dict
     ) -> Deferred:
-=======
-    def create_order(self, pair_id: int, kind: str, price: float, amount: float, **params: Dict) -> Deferred:
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08:ice3x/clients/async.py
         """Creates a new order given the provided inputs
 
         Args:
@@ -136,16 +132,7 @@ class IceCubedAsyncClient(IceCubedClientBase):
             volume: The volume to be transacted
         """
         params.update(
-<<<<<<< HEAD:ice3x/clients/asynchronous.py
             {"pair_id": pair_id, "amount": amount, "price": price, "type": kind}
-=======
-            {
-                'pair_id': pair_id,
-                'amount': amount,
-                'price': price,
-                'type': kind
-            }
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08:ice3x/clients/async.py
         )
 
         return self._fetch_resource("post", "order/new", params)

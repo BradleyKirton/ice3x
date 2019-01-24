@@ -133,13 +133,10 @@ class IceCubedSyncClient(IceCubedClientBase):
 
     @add_nonce
     @requires_authentication
-<<<<<<< HEAD
+
     def create_order(
         self, pair_id: int, kind: str, price: float, amount: float, **params: Dict
     ) -> Dict:
-=======
-    def create_order(self, pair_id: int, kind: str, price: float, amount: float, **params: Dict) -> Dict:
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
         """Creates a new order given the provided inputs
 
         Args:
@@ -149,16 +146,7 @@ class IceCubedSyncClient(IceCubedClientBase):
             volume: The volume to be transacted
         """
         params.update(
-<<<<<<< HEAD
             {"pair_id": pair_id, "amount": amount, "price": price, "type": kind}
-=======
-            {
-                'pair_id': pair_id,
-                'amount': amount,
-                'price': price,
-                'type': kind
-            }
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
         )
 
         return self._fetch_resource("post", "order/new", params)
