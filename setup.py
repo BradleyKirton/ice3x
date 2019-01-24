@@ -11,7 +11,7 @@ def get_readme():
     with open("README.md") as f:
         return f.read()
 
-
+      
 if sys.argv[-1] == "publish":
     os.system("python setup.py sdist bdist_wheel")
     os.system("twine upload dist/*")
@@ -19,7 +19,6 @@ if sys.argv[-1] == "publish":
     shutil.rmtree("build")
     shutil.rmtree("ice3x.egg-info")
     sys.exit()
-
 
 if sys.argv[-1] == "test":
     print("Running tests only on current environment.")
