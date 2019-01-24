@@ -133,7 +133,6 @@ class IceCubedSyncClient(IceCubedClientBase):
 
     @add_nonce
     @requires_authentication
-
     def create_order(
         self, pair_id: int, kind: str, price: float, amount: float, **params: Dict
     ) -> Dict:

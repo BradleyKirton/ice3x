@@ -48,11 +48,7 @@ def test_get_public_trade_info(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_public_trade_list(mocker, response, client) -> None:
     """Test the test_get_public_trade_list of the sync client"""
 
@@ -66,11 +62,7 @@ def test_get_public_trade_list(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_market_depth(mocker, response, client) -> None:
     """Test the get_market_depth of the sync client"""
 
@@ -84,11 +76,7 @@ def test_get_market_depth(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_pair_info(mocker, response, client) -> None:
     """Test the get_pair_info of the sync client"""
 
@@ -116,11 +104,7 @@ def test_get_pair_list(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_currency_info(mocker, response, client) -> None:
     """Test the get_currency_info of the sync client"""
 
@@ -134,11 +118,7 @@ def test_get_currency_info(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_currency_list(mocker, response, client) -> None:
     """Test the get_currency_list of the sync client"""
 
@@ -152,11 +132,7 @@ def test_get_currency_list(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_orderbook_info(mocker, response, client) -> None:
     """Test the get_orderbook_info of the sync client"""
 
@@ -170,11 +146,7 @@ def test_get_orderbook_info(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_market_depth_full(mocker, response, client) -> None:
     """Test the get_orderbook_info of the sync client"""
 
@@ -188,11 +160,7 @@ def test_get_market_depth_full(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_market_depth_bt_cav(mocker, response, client) -> None:
     """Test the get_market_depth_bt_cav of the sync client"""
 
@@ -206,11 +174,7 @@ def test_get_market_depth_bt_cav(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_invoice_list(mocker, response, client) -> None:
     """Test the get_invoice_list of the sync client"""
 
@@ -224,11 +188,7 @@ def test_get_invoice_list(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_invoice_info(mocker, response, client) -> None:
     """Test the get_invoice_info of the sync client"""
 
@@ -242,11 +202,7 @@ def test_get_invoice_info(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_invoice_pdf(mocker, response, client) -> None:
     """Test the get_invoice_pdf of the sync client"""
 
@@ -260,11 +216,7 @@ def test_get_invoice_pdf(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_cancel_order(mocker, response, client) -> None:
     """Test the cancel_order of the sync client"""
 
@@ -278,11 +230,7 @@ def test_cancel_order(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_create_order(mocker, response, client) -> None:
     """Test the create_order of the sync client"""
 
@@ -296,11 +244,7 @@ def test_create_order(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_order_info(mocker, response, client) -> None:
     """Test the get_order_info of the sync client"""
 
@@ -314,11 +258,7 @@ def test_get_order_info(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_order_list(mocker, response, client) -> None:
     """Test the get_order_list of the sync client"""
 
@@ -332,11 +272,7 @@ def test_get_order_list(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_transaction_info(mocker, response, client) -> None:
     """Test the get_transaction_info of the sync client"""
 
@@ -350,11 +286,7 @@ def test_get_transaction_info(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_transaction_list(mocker, response, client) -> None:
     """Test the get_transaction_list of the sync client"""
 
@@ -368,11 +300,7 @@ def test_get_transaction_list(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_trade_info(mocker, response, client) -> None:
     """Test the get_trade_info of the sync client"""
 
@@ -386,11 +314,7 @@ def test_get_trade_info(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_trade_list(mocker, response, client) -> None:
     """Test the get_trade_list of the sync client"""
 
@@ -404,11 +328,7 @@ def test_get_trade_list(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_balance_list(mocker, response, client) -> None:
     """Test the get_balance_list of the sync client"""
 
@@ -422,11 +342,7 @@ def test_get_balance_list(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_get_balance_info(mocker, response, client) -> None:
     """Test the get_balance_info of the sync client"""
 
@@ -440,11 +356,7 @@ def test_get_balance_info(mocker, response, client) -> None:
     assert data == response, message
 
 
-<<<<<<< HEAD
 @pytest_twisted.inlineCallbacks
-=======
-@pytest.inlineCallbacks
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 def test_unauthorised_access(mocker, response, uclient):
     """Test that the requires_authentication throws an error when accessing a resource without authentication"""
 

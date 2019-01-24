@@ -17,11 +17,7 @@ class IceCubedClientABC(abc.ABC):
 
 
 class IceCubedClientBase(IceCubedClientABC):
-<<<<<<< HEAD
     BASE_URI = "https://ice3x.com/api/v1/"
-=======
-    BASE_URI = 'https://ice3x.com/api/v1/'
->>>>>>> af82590187a6c2bb6aedc5b29a10329decb19b08
 
     @property
     def _has_auth_details(self) -> bool:
