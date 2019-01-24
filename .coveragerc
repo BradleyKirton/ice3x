@@ -1,0 +1,9 @@
+[run]
+source =
+    ice32x
+
+omit =
+	*tests*
+	*env*
+	setup.py
+

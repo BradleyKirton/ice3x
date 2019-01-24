@@ -1,2 +1,2 @@
 class UnauthorisedResourceException(Exception):
-	pass
+    pass

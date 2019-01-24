@@ -28,7 +28,7 @@ client.get_public_trade_list()
 ```python
 from typing import Dict
 from twisted.internet import reactor
-from ice3x.clients.async import IceCubedAsyncClient
+from ice3x.clients.asynchronous import IceCubedAsyncClient
 
 
 api_key = 'public key'
