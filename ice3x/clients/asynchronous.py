@@ -123,6 +123,7 @@ class IceCubedAsyncClient(IceCubedClientBase):
     def create_order(
         self, pair_id: int, kind: str, price: float, amount: float, **params: Dict
     ) -> Deferred:
+
         """Creates a new order given the provided inputs
 
         Args:

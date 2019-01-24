@@ -136,6 +136,7 @@ class IceCubedSyncClient(IceCubedClientBase):
     def create_order(
         self, pair_id: int, kind: str, price: float, amount: float, **params: Dict
     ) -> Dict:
+
         """Creates a new order given the provided inputs
 
         Args:

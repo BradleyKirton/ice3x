@@ -20,6 +20,7 @@ if sys.argv[-1] == "publish":
     shutil.rmtree("ice3x.egg-info")
     sys.exit()
 
+
 if sys.argv[-1] == "test":
     print("Running tests only on current environment.")
 
