@@ -11,10 +11,12 @@ def get_readme():
     with open("README.md") as f:
         return f.read()
 
-      
+
 if sys.argv[-1] == "publish":
-    os.system("python setup.py sdist bdist_wheel")
+    os.system("python setup.py sdist")
     os.system("twine upload dist/*")
+    sys.exit()
+
     shutil.rmtree("dist")
     shutil.rmtree("build")
     shutil.rmtree("ice3x.egg-info")
