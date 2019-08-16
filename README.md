@@ -26,7 +26,7 @@ client.get_public_trade_list()
 ## Async client
 
 ```python
-from typing import Dict
+from __future__ import annotations
 from twisted.internet import reactor
 from ice3x.clients.asynchronous import IceCubedAsyncClient
 
@@ -36,7 +36,7 @@ secret = 'private key'
 
 client = IceCubedAsyncClient(api_key=api_key, secret=secret)
 
-def print_data(data: Dict) -> None:
+def print_data(data: dict) -> None:
     """prints the json response from an API call"""
     print(data)
 
