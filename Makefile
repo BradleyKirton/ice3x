@@ -9,3 +9,6 @@ test:
 
 black:
 	@pipenv run black .
+
+patch:
+	@pipenv run bumpversion patch
