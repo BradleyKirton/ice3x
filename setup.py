@@ -25,7 +25,7 @@ if sys.argv[-1] == "publish":
 if __name__ == "__main__":
     setup(
         name="ice3x",
-        version="0.2.4",
+        version="0.2.5",
         description="Ice3x Crypto Currency Exchanage Python API",
         long_description=get_readme(),
         long_description_content_type="text/markdown",
