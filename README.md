@@ -78,10 +78,8 @@ Clone the repo and install the package with it's development requirements.
 ```bash
 git clone https://github.com/BradleyKirton/ice3x
 cd ice3x
-python -m venv env # virtualenv env
-source env/bin/activate
-pip install -e .[dev]
-pytest
+pipenv install -e .[dev]
+make test
 ```
 
 # TODO

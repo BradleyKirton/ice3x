@@ -4,8 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+ice3x = {editable = true,path = "."}
 
 [dev-packages]
+ice3x = {editable = true,path = "."}
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"

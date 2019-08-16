@@ -1,4 +1,3 @@
-import re
 import os
 import shutil
 import sys
@@ -20,15 +19,6 @@ if sys.argv[-1] == "publish":
     shutil.rmtree("dist")
     shutil.rmtree("build")
     shutil.rmtree("ice3x.egg-info")
-    sys.exit()
-
-if sys.argv[-1] == "test":
-    print("Running tests only on current environment.")
-
-    os.system("black ./ice3x")
-    os.system("pytest --cov=ice3x --cov-report=html")
-    os.system("rm coverage.svg")
-    os.system("coverage-badge -o coverage.svg")
     sys.exit()
 
 
