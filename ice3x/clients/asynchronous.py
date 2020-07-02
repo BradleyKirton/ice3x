@@ -1,10 +1,25 @@
 from __future__ import annotations
 
+from functools import wraps
 from typing import Any, Dict
 
 from ice3x.clients.abc import IceCubedClientBase
 from ice3x.decorators import add_nonce, requires_authentication
-from twisted.internet.defer import Deferred, inlineCallbacks
+
+try:
+    from twisted.internet.defer import Deferred, inlineCallbacks
+except ImportError:
+    Deferred = None
+
+    def inlineCallbacks(func):
+        @wraps(func)
+        def inner(*args: Any, **kwargs: Any) -> None:
+            raise ImportError(
+                "twisted is required for the IceCubedAsyncClient. Try installing the with `pip install ice3x[async]`"
+            )
+
+        return inner
+
 
 try:
     import treq
@@ -19,9 +34,10 @@ class IceCubedAsyncClient(IceCubedClientBase):
     ) -> Deferred:
         """Post request data to API."""
 
-        assert (
-            treq is not None
-        ), "treq is required for the IceCubedAsyncClient. Try installing the with `pip install ice3x[async]`"
+        if treq is None:
+            raise ImportError(
+                "treq is required for the IceCubedAsyncClient. Try installing the with `pip install ice3x[async]`"
+            )
 
         if params is None:
             params = {}
@@ -42,17 +58,6 @@ class IceCubedAsyncClient(IceCubedClientBase):
         resp = yield treq.request(method, url, **kwargs)
         data = yield resp.json()
         return data
-
-    def __init__(self, api_key: str = None, secret: str = None) -> None:
-        """Instantiate the client
-
-        Args:
-            api_key: An ICE3X public API key
-            secret: An ICE3X private API key
-        """
-
-        self.api_key = api_key
-        self.secret = secret
 
     def get_public_trade_info(self, trade_id: int, **params: Any) -> Deferred:
         """Fetch public info relating to a specified trade
