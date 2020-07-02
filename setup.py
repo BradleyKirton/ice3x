@@ -2,8 +2,7 @@ import os
 import shutil
 import sys
 
-from setuptools import setup
-from setuptools import find_packages
+from setuptools import find_packages, setup
 
 
 def get_readme():
@@ -55,7 +54,6 @@ if __name__ == "__main__":
                 "pytest",
                 "pytest-mock",
                 "pytest-twisted",
-                "coverage-badge",
                 "pytest-cov",
                 "twine",
             ],
